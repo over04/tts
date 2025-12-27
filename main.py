@@ -124,7 +124,7 @@ async def create_speech_post(request: TTSSpeechRequest):
 async def create_speech_get(
     input: str,
     model: str = "azure",
-    voice: str = "zh-CN-XiaoxiaoMultilingualNeural",
+    voice_id: str = "zh-CN-XiaoxiaoMultilingualNeural",
     response_format: ResponseFormat = ResponseFormat.MP3,
     speed: float = 1.0,
 ):
@@ -132,7 +132,7 @@ async def create_speech_get(
     return await _synthesize_speech(
         model=model,
         input_text=input,
-        voice=voice,
+        voice=voice_id,
         response_format=response_format,
         speed=speed,
     )
